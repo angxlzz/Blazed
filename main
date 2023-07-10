@@ -1,6 +1,0 @@
---// Blazed X Main | Don't try to bypass because it wont work
-if _G.MainCheck == "4DFB59BE7F2BDFC7C3367D1447F6E" then
-print("working")
-else
-print("Bypass Failed, I TOLD YOU..!")
-end
