@@ -29,7 +29,7 @@ local function Round2px()
 	NewImage.SliceCenter = Rect.new(2, 2, 298, 298);
 	NewImage.ImageColor3 = Color3.fromRGB(12, 12, 12);
         UICorner.CornerRadius = UDim.new(0, 10)
-        UICorner.Parent = KeyEdges2
+        UICorner.Parent = NewImage
 	return NewImage;
 end
 
@@ -41,7 +41,7 @@ local function Shadow2px()
 	NewImage.Position = -UDim2.fromOffset(15, 15);
 	NewImage.ImageColor3 = Color3.fromRGB(12, 12, 12);
         UICorner.CornerRadius = UDim.new(0, 10)
-        UICorner.Parent = KeyEdges2
+        UICorner.Parent = NewImage
 
 	return NewImage;
 end
