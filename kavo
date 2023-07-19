@@ -63,12 +63,12 @@ local themeStyles = {
         TextColor = Color3.fromRGB(255,255,255),
         ElementColor = Color3.fromRGB(20, 20, 20)
     },
-    LightTheme = {
-        SchemeColor = Color3.fromRGB(150, 150, 150),
-        Background = Color3.fromRGB(255,255,255),
-        Header = Color3.fromRGB(200, 200, 200),
-        TextColor = Color3.fromRGB(0,0,0),
-        ElementColor = Color3.fromRGB(224, 224, 224)
+    BLAZED = {
+    SchemeColor = Color3.fromRGB(255,255,255),
+    Background = Color3.fromRGB(15, 15, 15),
+    Header = Color3.fromRGB(15, 2555, 15),
+    TextColor = Color3.fromRGB(66,66,66),
+    ElementColor = Color3.fromRGB(12, 12, 12)
     },
     BloodTheme = {
         SchemeColor = Color3.fromRGB(227, 27, 27),
