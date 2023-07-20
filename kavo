@@ -1,3 +1,9 @@
+--[[
+This is Kavo, Not a custom UI Lib for Blazed! You can get it here: https://xheptcofficial.gitbook.io/kavo-library
+We put this file together for a custom, good looking version of Kavo. To use this version of it just activate the theme "DarkTheme" its heavily customized, and it will only look good as that.
+
+- Blazed Development Team
+--]]
 local Kavo = {}
 
 local tween = game:GetService("TweenService")
@@ -393,7 +399,7 @@ function Kavo.CreateLib(kavName, themeList)
         page.Size = UDim2.new(1, 0, 1, 0)
         page.ScrollBarThickness = 5
         page.Visible = false
-        page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
+        page.ScrollBarImageColor3 = Color3.fromRGB(66,66,66)
 
         pageListing.Name = "pageListing"
         pageListing.Parent = page
@@ -463,7 +469,7 @@ function Kavo.CreateLib(kavName, themeList)
         coroutine.wrap(function()
             while wait() do
                 page.BackgroundColor3 = themeList.Background
-                page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
+                page.ScrollBarImageColor3 = Color3.fromRGB(66,66,66)
                 tabButton.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
             end
