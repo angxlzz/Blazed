@@ -43,8 +43,8 @@ getgenv().Aiming = {
     FOVColour = Color3fromRGB(255, 0, 0),
 
 Thickness = 2,
-Transparency = 0
-Filled = false
+Transparency = 0,
+Filled = false,
 
     VisibleCheck = true,
     
