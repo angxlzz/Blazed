@@ -69,13 +69,13 @@ local themeStyles = {
     TextColor = Color3.fromRGB(255,255,255),
     ElementColor = Color3.fromRGB(15, 15, 15)
     },
-    SpeedyMode = {
-        SchemeColor = Color3.fromRGB(255,0,0),
-        Background = Color3.fromRGB(12, 12, 12),
-        Header = Color3.fromRGB(12, 12, 12),
-        TextColor = Color3.fromRGB(255,255,255),
-        ElementColor = Color3.fromRGB(255, 0, 0)
-        },
+    SpeedyBari = {
+    SchemeColor = Color3.fromRGB(255,0,0),
+    Background = Color3.fromRGB(12, 12, 12),
+    Header = Color3.fromRGB(12, 12, 12),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(15, 15, 15)
+    },
     LightTheme = {
         SchemeColor = Color3.fromRGB(150, 150, 150),
         Background = Color3.fromRGB(255,255,255),
