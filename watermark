@@ -1,0 +1,22 @@
+-- // feel free to skid xd
+local Blazed_Watermark = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+Blazed_Watermark.Name = "Blazed_Watermark"
+Blazed_Watermark.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Blazed_Watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = Blazed_Watermark
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.421135634, 0, 0.842857122, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.GothamBlack
+TextLabel.Text = "Blazed | .GG/DHLOCKERS"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 16.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextTransparency = 0.700
+TextLabel.TextWrapped = true
