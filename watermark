@@ -1,3 +1,9 @@
+_G.SpeedyMode = true
+if _G.SpeedyMode == true then
+  _G.markColor = Color3.fromRGB(255, 0, 0)
+  else
+  _G.markColor = Color3.fromRGB(255,255,255)
+end
 local Blazed_Watermark = Instance.new("ScreenGui")
 local TextLabel = Instance.new("TextLabel")
 
@@ -14,9 +20,9 @@ TextLabel.Position = UDim2.new(0.447725832, 0, 0.845054924, 0)
 TextLabel.Size = UDim2.new(0, 200, 0, 50)
 TextLabel.Font = Enum.Font.GothamBlack
 TextLabel.Text = "Blazed | .GG/DHLOCKERS"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextColor3 = _G.markColor
 TextLabel.TextSize = 16.000
-TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextStrokeColor3 = _G.markColor
 TextLabel.TextTransparency = 1 --// 7.00
 TextLabel.TextWrapped = true
 
