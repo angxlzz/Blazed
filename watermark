@@ -20,10 +20,10 @@ TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextTransparency = 1 --// 7.00
 TextLabel.TextWrapped = true
 
+
 wait(.12)
 TextLabel.TextTransparency = .9
 wait(.12)
 TextLabel.TextTransparency = .8
 wait(.12) 
 TextLabel.TextTransparency = .7
-
