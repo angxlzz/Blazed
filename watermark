@@ -1,4 +1,3 @@
-_G.SpeedyMode = true
 if _G.SpeedyMode == true then
   _G.markColor = Color3.fromRGB(255, 0, 0)
   else
