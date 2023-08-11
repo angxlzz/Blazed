@@ -1,9 +1,3 @@
--- // feel free to skid xd
-
-if _G.markloader == true then
-return
-else
-
 local Blazed_Watermark = Instance.new("ScreenGui")
 local TextLabel = Instance.new("TextLabel")
 
@@ -32,4 +26,4 @@ wait(.12)
 TextLabel.TextTransparency = .8
 wait(.12) 
 TextLabel.TextTransparency = .7
-end
+
