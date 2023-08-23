@@ -1,11 +1,14 @@
--- Blazed UI Library, functions based on Kavo.
-
 local BLAZED = {};
 
-
+if not gethui then
+	function gethui()
+		return game:GetService("CoreGui")
+	end
+end
 
 -- Blazed
-BLAZED["1"] = Instance.new("ScreenGui", gethui() or game:GetService("CoreGui"));
+BLAZED["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+BLAZED["1"]["Enabled"] = false;
 BLAZED["1"]["Name"] = [[Blazed]];
 BLAZED["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 BLAZED["1"]["ResetOnSpawn"] = false;
@@ -101,235 +104,261 @@ BLAZED["b"] = Instance.new("UIGradient", BLAZED["a"]);
 BLAZED["b"]["Name"] = [[Gradient]];
 BLAZED["b"]["Rotation"] = 90;
 
--- Blazed.BlazedFrame.Landing
-BLAZED["c"] = Instance.new("Frame", BLAZED["2"]);
+-- Blazed.BlazedFrame.ImageLabel
+BLAZED["c"] = Instance.new("ImageLabel", BLAZED["2"]);
 BLAZED["c"]["BorderSizePixel"] = 0;
-BLAZED["c"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
-BLAZED["c"]["Size"] = UDim2.new(0, 408, 0, 289);
+BLAZED["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["c"]["ImageColor3"] = Color3.fromRGB(67, 67, 67);
+BLAZED["c"]["Image"] = [[rbxassetid://3926305904]];
+BLAZED["c"]["ImageRectSize"] = Vector2.new(36, 36);
+BLAZED["c"]["Size"] = UDim2.new(0, 23, 0, 23);
 BLAZED["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["c"]["Position"] = UDim2.new(0.2270762324333191, 0, -0.0003840327262878418, 0);
-BLAZED["c"]["Visible"] = false;
-BLAZED["c"]["Name"] = [[Landing]];
+BLAZED["c"]["ImageRectOffset"] = Vector2.new(764, 764);
+BLAZED["c"]["BackgroundTransparency"] = 1;
+BLAZED["c"]["Position"] = UDim2.new(4.0666656494140625, 0, 0.5259514451026917, 0);
+
+-- Blazed.BlazedFrame.UICorner
+BLAZED["d"] = Instance.new("UICorner", BLAZED["2"]);
+BLAZED["d"]["CornerRadius"] = UDim.new(0, 12);
+
+-- Blazed.BlazedFrame.Tabs
+BLAZED["e"] = Instance.new("Frame", BLAZED["2"]);
+BLAZED["e"]["BorderSizePixel"] = 0;
+BLAZED["e"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
+BLAZED["e"]["Size"] = UDim2.new(0, 408, 0, 288);
+BLAZED["e"]["ClipsDescendants"] = true;
+BLAZED["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["e"]["Position"] = UDim2.new(0.22727273404598236, 0, 0, 0);
+BLAZED["e"]["Name"] = [[Tabs]];
+
+-- Blazed.BlazedFrame.Tabs.UICorner
+BLAZED["f"] = Instance.new("UICorner", BLAZED["e"]);
+BLAZED["f"]["CornerRadius"] = UDim.new(0, 12);
+
+-- Blazed.BlazedFrame.Tabs.InfoViewer
+BLAZED["10"] = Instance.new("Frame", BLAZED["e"]);
+BLAZED["10"]["ZIndex"] = 10;
+BLAZED["10"]["BorderSizePixel"] = 0;
+BLAZED["10"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
+BLAZED["10"]["LayoutOrder"] = 10;
+BLAZED["10"]["Size"] = UDim2.new(0, 384, 0, 37);
+BLAZED["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["10"]["Position"] = UDim2.new(0.01600000075995922, 0, 1, 0);
+BLAZED["10"]["Name"] = [[InfoViewer]];
+
+-- Blazed.BlazedFrame.Tabs.InfoViewer.UICorner
+BLAZED["11"] = Instance.new("UICorner", BLAZED["10"]);
+BLAZED["11"]["CornerRadius"] = UDim.new(0, 10);
+
+-- Blazed.BlazedFrame.Tabs.InfoViewer.TextLabel
+BLAZED["12"] = Instance.new("TextLabel", BLAZED["10"]);
+BLAZED["12"]["BorderSizePixel"] = 0;
+BLAZED["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["12"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+BLAZED["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+BLAZED["12"]["TextSize"] = 17;
+BLAZED["12"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
+BLAZED["12"]["Size"] = UDim2.new(0, 90, 0, 28);
+BLAZED["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["12"]["Text"] = [[Info]];
+BLAZED["12"]["BackgroundTransparency"] = 1;
+BLAZED["12"]["Position"] = UDim2.new(0.02604166604578495, 0, 0.10810811072587967, 0);
+
+-- Blazed.BlazedFrame.Landing
+BLAZED["13"] = Instance.new("Frame", BLAZED["2"]);
+BLAZED["13"]["BorderSizePixel"] = 0;
+BLAZED["13"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
+BLAZED["13"]["Size"] = UDim2.new(0, 408, 0, 289);
+BLAZED["13"]["ClipsDescendants"] = true;
+BLAZED["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["13"]["Position"] = UDim2.new(0.2270762324333191, 0, -0.0003840327262878418, 0);
+BLAZED["13"]["Name"] = [[Landing]];
 
 -- Blazed.BlazedFrame.Landing.UICorner
-BLAZED["d"] = Instance.new("UICorner", BLAZED["c"]);
-BLAZED["d"]["CornerRadius"] = UDim.new(0, 10);
+BLAZED["14"] = Instance.new("UICorner", BLAZED["13"]);
+BLAZED["14"]["CornerRadius"] = UDim.new(0, 10);
 
--- Blazed.BlazedFrame.Landing.TextLabel
-BLAZED["e"] = Instance.new("TextLabel", BLAZED["c"]);
-BLAZED["e"]["BorderSizePixel"] = 0;
-BLAZED["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-BLAZED["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
-BLAZED["e"]["TextSize"] = 25;
-BLAZED["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["e"]["Size"] = UDim2.new(0, 367, 0, 22);
-BLAZED["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["e"]["Text"] = [[NaN]];
-BLAZED["e"]["BackgroundTransparency"] = 1;
-BLAZED["e"]["Position"] = UDim2.new(0.2549019455909729, 0, 0.09546848386526108, 0);
-
--- Blazed.BlazedFrame.Landing.TextLabel.LocalScript
-BLAZED["f"] = Instance.new("LocalScript", BLAZED["e"]);
-
-
--- Blazed.BlazedFrame.Landing.TextLabel
-BLAZED["10"] = Instance.new("TextLabel", BLAZED["c"]);
-BLAZED["10"]["BorderSizePixel"] = 0;
-BLAZED["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["10"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-BLAZED["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
-BLAZED["10"]["TextSize"] = 15;
-BLAZED["10"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["10"]["Size"] = UDim2.new(0, 367, 0, 18);
-BLAZED["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["10"]["Text"] = [[@NaN]];
-BLAZED["10"]["BackgroundTransparency"] = 1;
-BLAZED["10"]["Position"] = UDim2.new(0.2549019753932953, 0, 0.17301037907600403, 0);
-
--- Blazed.BlazedFrame.Landing.TextLabel.LocalScript
-BLAZED["11"] = Instance.new("LocalScript", BLAZED["10"]);
-
-
--- Blazed.BlazedFrame.Landing.ImageLabel
-BLAZED["12"] = Instance.new("ImageLabel", BLAZED["c"]);
-BLAZED["12"]["BorderSizePixel"] = 0;
-BLAZED["12"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-BLAZED["12"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-BLAZED["12"]["Size"] = UDim2.new(0, 90, 0, 90);
-BLAZED["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["12"]["Position"] = UDim2.new(0.01715686358511448, 0, 0.024221453815698624, 0);
-
--- Blazed.BlazedFrame.Landing.ImageLabel.UICorner
-BLAZED["13"] = Instance.new("UICorner", BLAZED["12"]);
-BLAZED["13"]["CornerRadius"] = UDim.new(0, 50);
-
--- Blazed.BlazedFrame.Landing.ImageLabel.LocalScript
-BLAZED["14"] = Instance.new("LocalScript", BLAZED["12"]);
-
-
--- Blazed.BlazedFrame.Landing.Frame
-BLAZED["15"] = Instance.new("Frame", BLAZED["c"]);
+-- Blazed.BlazedFrame.Landing.DisplayName
+BLAZED["15"] = Instance.new("TextLabel", BLAZED["13"]);
 BLAZED["15"]["BorderSizePixel"] = 0;
-BLAZED["15"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-BLAZED["15"]["Size"] = UDim2.new(0, 387, 0, 118);
+BLAZED["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["15"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+BLAZED["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+BLAZED["15"]["TextSize"] = 25;
+BLAZED["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["15"]["Size"] = UDim2.new(0, 367, 0, 22);
 BLAZED["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["15"]["Position"] = UDim2.new(0.02450980432331562, 0, 0.5636495351791382, 0);
+BLAZED["15"]["Text"] = [[NaN]];
+BLAZED["15"]["Name"] = [[DisplayName]];
+BLAZED["15"]["BackgroundTransparency"] = 1;
+BLAZED["15"]["Position"] = UDim2.new(0.2549019455909729, 0, 0.09546848386526108, 0);
 
--- Blazed.BlazedFrame.Landing.Frame.UICorner
-BLAZED["16"] = Instance.new("UICorner", BLAZED["15"]);
-BLAZED["16"]["CornerRadius"] = UDim.new(0, 10);
+-- Blazed.BlazedFrame.Landing.Username
+BLAZED["16"] = Instance.new("TextLabel", BLAZED["13"]);
+BLAZED["16"]["BorderSizePixel"] = 0;
+BLAZED["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["16"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+BLAZED["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+BLAZED["16"]["TextSize"] = 15;
+BLAZED["16"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
+BLAZED["16"]["Size"] = UDim2.new(0, 367, 0, 18);
+BLAZED["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["16"]["Text"] = [[@NaN]];
+BLAZED["16"]["Name"] = [[Username]];
+BLAZED["16"]["BackgroundTransparency"] = 1;
+BLAZED["16"]["Position"] = UDim2.new(0.2549019753932953, 0, 0.17301037907600403, 0);
 
--- Blazed.BlazedFrame.Landing.Frame.TextLabel
-BLAZED["17"] = Instance.new("TextLabel", BLAZED["15"]);
+-- Blazed.BlazedFrame.Landing.Profile
+BLAZED["17"] = Instance.new("ImageLabel", BLAZED["13"]);
 BLAZED["17"]["BorderSizePixel"] = 0;
-BLAZED["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-BLAZED["17"]["TextSize"] = 17;
-BLAZED["17"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["17"]["Size"] = UDim2.new(0, 200, 0, 50);
+BLAZED["17"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
+BLAZED["17"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+BLAZED["17"]["Size"] = UDim2.new(0, 90, 0, 90);
 BLAZED["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["17"]["Text"] = [[Changelogs]];
-BLAZED["17"]["BackgroundTransparency"] = 1;
-BLAZED["17"]["Position"] = UDim2.new(0.2368421107530594, 0, -0.0760233923792839, 0);
+BLAZED["17"]["Name"] = [[Profile]];
+BLAZED["17"]["Position"] = UDim2.new(0.01715686358511448, 0, 0.024221453815698624, 0);
 
--- Blazed.BlazedFrame.Landing.Frame
-BLAZED["18"] = Instance.new("Frame", BLAZED["c"]);
-BLAZED["18"]["BorderSizePixel"] = 0;
-BLAZED["18"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-BLAZED["18"]["Size"] = UDim2.new(0, 190, 0, 48);
-BLAZED["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["18"]["Position"] = UDim2.new(0.02450980432331562, 0, 0.38328707218170166, 0);
+-- Blazed.BlazedFrame.Landing.Profile.UICorner
+BLAZED["18"] = Instance.new("UICorner", BLAZED["17"]);
+BLAZED["18"]["CornerRadius"] = UDim.new(0, 50);
 
--- Blazed.BlazedFrame.Landing.Frame.UICorner
-BLAZED["19"] = Instance.new("UICorner", BLAZED["18"]);
-BLAZED["19"]["CornerRadius"] = UDim.new(0, 10);
+-- Blazed.BlazedFrame.Landing.Changelogs
+BLAZED["19"] = Instance.new("Frame", BLAZED["13"]);
+BLAZED["19"]["BorderSizePixel"] = 0;
+BLAZED["19"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
+BLAZED["19"]["Size"] = UDim2.new(0, 387, 0, 118);
+BLAZED["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["19"]["Position"] = UDim2.new(0.02450980432331562, 0, 0.5636495351791382, 0);
+BLAZED["19"]["Name"] = [[Changelogs]];
 
--- Blazed.BlazedFrame.Landing.Frame.TextLabel
-BLAZED["1a"] = Instance.new("TextLabel", BLAZED["18"]);
-BLAZED["1a"]["BorderSizePixel"] = 0;
-BLAZED["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-BLAZED["1a"]["TextSize"] = 15;
-BLAZED["1a"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["1a"]["Size"] = UDim2.new(0, 73, 0, 21);
-BLAZED["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["1a"]["Text"] = [[Version]];
-BLAZED["1a"]["BackgroundTransparency"] = 1;
-BLAZED["1a"]["Position"] = UDim2.new(-0.015789473429322243, 0, 0, 0);
+-- Blazed.BlazedFrame.Landing.Changelogs.UICorner
+BLAZED["1a"] = Instance.new("UICorner", BLAZED["19"]);
+BLAZED["1a"]["CornerRadius"] = UDim.new(0, 10);
 
--- Blazed.BlazedFrame.Landing.Frame.TextLabel
-BLAZED["1b"] = Instance.new("TextLabel", BLAZED["18"]);
+-- Blazed.BlazedFrame.Landing.Changelogs.TextLabel
+BLAZED["1b"] = Instance.new("TextLabel", BLAZED["19"]);
 BLAZED["1b"]["BorderSizePixel"] = 0;
 BLAZED["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["1b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-BLAZED["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
-BLAZED["1b"]["TextSize"] = 20;
+BLAZED["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+BLAZED["1b"]["TextSize"] = 17;
 BLAZED["1b"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["1b"]["Size"] = UDim2.new(0, 187, 0, 19);
+BLAZED["1b"]["Size"] = UDim2.new(0, 200, 0, 50);
 BLAZED["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["1b"]["Text"] = [[V1.0.0]];
+BLAZED["1b"]["Text"] = [[Changelogs]];
 BLAZED["1b"]["BackgroundTransparency"] = 1;
-BLAZED["1b"]["Position"] = UDim2.new(0.05263157933950424, 0, 0.3333333432674408, 0);
+BLAZED["1b"]["Position"] = UDim2.new(0.2368421107530594, 0, -0.0760233923792839, 0);
 
--- Blazed.BlazedFrame.Landing.Frame
-BLAZED["1c"] = Instance.new("Frame", BLAZED["c"]);
+-- Blazed.BlazedFrame.Landing.Changelogs.ScrollingFrame
+BLAZED["1c"] = Instance.new("ScrollingFrame", BLAZED["19"]);
+BLAZED["1c"]["Active"] = true;
 BLAZED["1c"]["BorderSizePixel"] = 0;
-BLAZED["1c"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-BLAZED["1c"]["Size"] = UDim2.new(0, 190, 0, 48);
+BLAZED["1c"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+BLAZED["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["1c"]["BackgroundTransparency"] = 1;
+BLAZED["1c"]["Size"] = UDim2.new(0, 386, 0, 89);
+BLAZED["1c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
 BLAZED["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["1c"]["Position"] = UDim2.new(0.5073529481887817, 0, 0.38328707218170166, 0);
+BLAZED["1c"]["ScrollBarThickness"] = 0;
+BLAZED["1c"]["Position"] = UDim2.new(0.002583979396149516, 0, 0.24576270580291748, 0);
 
--- Blazed.BlazedFrame.Landing.Frame.UICorner
-BLAZED["1d"] = Instance.new("UICorner", BLAZED["1c"]);
-BLAZED["1d"]["CornerRadius"] = UDim.new(0, 10);
+-- Blazed.BlazedFrame.Landing.Changelogs.ScrollingFrame.UIListLayout
+BLAZED["1d"] = Instance.new("UIListLayout", BLAZED["1c"]);
+BLAZED["1d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
--- Blazed.BlazedFrame.Landing.Frame.TextLabel
+-- Blazed.BlazedFrame.Landing.Changelogs.ScrollingFrame.TextLabel
 BLAZED["1e"] = Instance.new("TextLabel", BLAZED["1c"]);
 BLAZED["1e"]["BorderSizePixel"] = 0;
 BLAZED["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
-BLAZED["1e"]["TextSize"] = 15;
+BLAZED["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+BLAZED["1e"]["TextSize"] = 14;
 BLAZED["1e"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["1e"]["Size"] = UDim2.new(0, 112, 0, 43);
+BLAZED["1e"]["Size"] = UDim2.new(0, 379, 0, 21);
 BLAZED["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["1e"]["Text"] = [[Discord]];
+BLAZED["1e"]["Text"] = [[# Nothing]];
 BLAZED["1e"]["BackgroundTransparency"] = 1;
-BLAZED["1e"]["Position"] = UDim2.new(-0.09473687410354614, 0, -0.16666662693023682, 0);
+BLAZED["1e"]["Position"] = UDim2.new(7.906108123734157e-08, 0, 0, 0);
 
--- Blazed.BlazedFrame.Landing.Frame.TextLabel
-BLAZED["1f"] = Instance.new("TextLabel", BLAZED["1c"]);
+-- Blazed.BlazedFrame.Landing.Version
+BLAZED["1f"] = Instance.new("Frame", BLAZED["13"]);
 BLAZED["1f"]["BorderSizePixel"] = 0;
-BLAZED["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["1f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-BLAZED["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
-BLAZED["1f"]["TextSize"] = 20;
-BLAZED["1f"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["1f"]["Size"] = UDim2.new(0, 190, 0, 15);
+BLAZED["1f"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
+BLAZED["1f"]["Size"] = UDim2.new(0, 190, 0, 48);
 BLAZED["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["1f"]["Text"] = [[.gg/dhlockers]];
-BLAZED["1f"]["BackgroundTransparency"] = 1;
-BLAZED["1f"]["Position"] = UDim2.new(0.057894736528396606, 0, 0.4375, 0);
+BLAZED["1f"]["Position"] = UDim2.new(0.02450980432331562, 0, 0.38328707218170166, 0);
+BLAZED["1f"]["Name"] = [[Version]];
 
--- Blazed.BlazedFrame.ImageLabel
-BLAZED["20"] = Instance.new("ImageLabel", BLAZED["2"]);
-BLAZED["20"]["BorderSizePixel"] = 0;
-BLAZED["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-BLAZED["20"]["ImageColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["20"]["Image"] = [[rbxassetid://3926305904]];
-BLAZED["20"]["ImageRectSize"] = Vector2.new(36, 36);
-BLAZED["20"]["Size"] = UDim2.new(0, 23, 0, 23);
-BLAZED["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["20"]["ImageRectOffset"] = Vector2.new(764, 764);
-BLAZED["20"]["BackgroundTransparency"] = 1;
-BLAZED["20"]["Position"] = UDim2.new(4.0666656494140625, 0, 0.5259514451026917, 0);
+-- Blazed.BlazedFrame.Landing.Version.UICorner
+BLAZED["20"] = Instance.new("UICorner", BLAZED["1f"]);
+BLAZED["20"]["CornerRadius"] = UDim.new(0, 10);
 
--- Blazed.BlazedFrame.UICorner
-BLAZED["21"] = Instance.new("UICorner", BLAZED["2"]);
-BLAZED["21"]["CornerRadius"] = UDim.new(0, 12);
+-- Blazed.BlazedFrame.Landing.Version.Title
+BLAZED["21"] = Instance.new("TextLabel", BLAZED["1f"]);
+BLAZED["21"]["BorderSizePixel"] = 0;
+BLAZED["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+BLAZED["21"]["TextSize"] = 15;
+BLAZED["21"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
+BLAZED["21"]["Size"] = UDim2.new(0, 73, 0, 21);
+BLAZED["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["21"]["Text"] = [[Version]];
+BLAZED["21"]["Name"] = [[Title]];
+BLAZED["21"]["BackgroundTransparency"] = 1;
+BLAZED["21"]["Position"] = UDim2.new(-0.015789473429322243, 0, 0, 0);
 
--- Blazed.BlazedFrame.Tabs
-BLAZED["22"] = Instance.new("Frame", BLAZED["2"]);
+-- Blazed.BlazedFrame.Landing.Version.TextLabel
+BLAZED["22"] = Instance.new("TextLabel", BLAZED["1f"]);
 BLAZED["22"]["BorderSizePixel"] = 0;
-BLAZED["22"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
-BLAZED["22"]["Size"] = UDim2.new(0, 408, 0, 288);
-BLAZED["22"]["ClipsDescendants"] = true;
+BLAZED["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["22"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+BLAZED["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+BLAZED["22"]["TextSize"] = 20;
+BLAZED["22"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
+BLAZED["22"]["Size"] = UDim2.new(0, 187, 0, 19);
 BLAZED["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["22"]["Position"] = UDim2.new(0.22727273404598236, 0, 0, 0);
-BLAZED["22"]["Name"] = [[Tabs]];
+BLAZED["22"]["Text"] = [[V1.0.0]];
+BLAZED["22"]["BackgroundTransparency"] = 1;
+BLAZED["22"]["Position"] = UDim2.new(0.05263157933950424, 0, 0.3333333432674408, 0);
 
--- Blazed.BlazedFrame.Tabs.UICorner
-BLAZED["23"] = Instance.new("UICorner", BLAZED["22"]);
-BLAZED["23"]["CornerRadius"] = UDim.new(0, 12);
+-- Blazed.BlazedFrame.Landing.Server
+BLAZED["23"] = Instance.new("Frame", BLAZED["13"]);
+BLAZED["23"]["BorderSizePixel"] = 0;
+BLAZED["23"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
+BLAZED["23"]["Size"] = UDim2.new(0, 190, 0, 48);
+BLAZED["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["23"]["Position"] = UDim2.new(0.5073529481887817, 0, 0.38328707218170166, 0);
+BLAZED["23"]["Name"] = [[Server]];
 
--- Blazed.BlazedFrame.Tabs.InfoViewer
-BLAZED["24"] = Instance.new("Frame", BLAZED["22"]);
-BLAZED["24"]["ZIndex"] = 10;
-BLAZED["24"]["BorderSizePixel"] = 0;
-BLAZED["24"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
-BLAZED["24"]["LayoutOrder"] = 10;
-BLAZED["24"]["Size"] = UDim2.new(0, 384, 0, 37);
-BLAZED["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["24"]["Position"] = UDim2.new(0.01600000075995922, 0, 1, 0);
-BLAZED["24"]["Name"] = [[InfoViewer]];
+-- Blazed.BlazedFrame.Landing.Server.UICorner
+BLAZED["24"] = Instance.new("UICorner", BLAZED["23"]);
+BLAZED["24"]["CornerRadius"] = UDim.new(0, 10);
 
--- Blazed.BlazedFrame.Tabs.InfoViewer.UICorner
-BLAZED["25"] = Instance.new("UICorner", BLAZED["24"]);
-BLAZED["25"]["CornerRadius"] = UDim.new(0, 10);
+-- Blazed.BlazedFrame.Landing.Server.Title
+BLAZED["25"] = Instance.new("TextLabel", BLAZED["23"]);
+BLAZED["25"]["BorderSizePixel"] = 0;
+BLAZED["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+BLAZED["25"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+BLAZED["25"]["TextSize"] = 15;
+BLAZED["25"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
+BLAZED["25"]["Size"] = UDim2.new(0, 112, 0, 43);
+BLAZED["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+BLAZED["25"]["Text"] = [[Discord]];
+BLAZED["25"]["Name"] = [[Title]];
+BLAZED["25"]["BackgroundTransparency"] = 1;
+BLAZED["25"]["Position"] = UDim2.new(-0.09473687410354614, 0, -0.16666662693023682, 0);
 
--- Blazed.BlazedFrame.Tabs.InfoViewer.TextLabel
-BLAZED["26"] = Instance.new("TextLabel", BLAZED["24"]);
+-- Blazed.BlazedFrame.Landing.Server.TextLabel
+BLAZED["26"] = Instance.new("TextLabel", BLAZED["23"]);
 BLAZED["26"]["BorderSizePixel"] = 0;
 BLAZED["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 BLAZED["26"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-BLAZED["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-BLAZED["26"]["TextSize"] = 17;
+BLAZED["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+BLAZED["26"]["TextSize"] = 20;
 BLAZED["26"]["TextColor3"] = Color3.fromRGB(67, 67, 67);
-BLAZED["26"]["Size"] = UDim2.new(0, 90, 0, 28);
+BLAZED["26"]["Size"] = UDim2.new(0, 190, 0, 15);
 BLAZED["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["26"]["Text"] = [[Info]];
+BLAZED["26"]["Text"] = [[.gg/dhlockers]];
 BLAZED["26"]["BackgroundTransparency"] = 1;
-BLAZED["26"]["Position"] = UDim2.new(0.02604166604578495, 0, 0.10810811072587967, 0);
+BLAZED["26"]["Position"] = UDim2.new(0.057894736528396606, 0, 0.4375, 0);
 
 -- Blazed.Library
 BLAZED["27"] = Instance.new("ModuleScript", BLAZED["1"]);
@@ -395,6 +424,7 @@ BLAZED["2f"] = Instance.new("Frame", BLAZED["2e"]);
 BLAZED["2f"]["BorderSizePixel"] = 0;
 BLAZED["2f"]["BackgroundColor3"] = Color3.fromRGB(13, 13, 13);
 BLAZED["2f"]["Size"] = UDim2.new(0, 384, 0, 37);
+BLAZED["2f"]["ClipsDescendants"] = true;
 BLAZED["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 BLAZED["2f"]["Visible"] = false;
 BLAZED["2f"]["Name"] = [[Toggle]];
@@ -438,9 +468,9 @@ BLAZED["33"]["CornerRadius"] = UDim.new(0, 10);
 BLAZED["34"] = Instance.new("Frame", BLAZED["2f"]);
 BLAZED["34"]["BorderSizePixel"] = 0;
 BLAZED["34"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
-BLAZED["34"]["Size"] = UDim2.new(0, 379, 0, -1);
+BLAZED["34"]["Size"] = UDim2.new(0, 373, 0, 1);
 BLAZED["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-BLAZED["34"]["Position"] = UDim2.new(0.010416666977107525, 0, 1.000972867012024, 0);
+BLAZED["34"]["Position"] = UDim2.new(0.01600000075995922, 0, 0.9599999785423279, 0);
 
 -- Blazed.Reserved.SectionElements.Toggle.Frame.UICorner
 BLAZED["35"] = Instance.new("UICorner", BLAZED["34"]);
@@ -1726,6 +1756,10 @@ BLAZED["c3"]["BackgroundTransparency"] = 1;
 BLAZED["c4"] = Instance.new("UICorner", BLAZED["c0"]);
 BLAZED["c4"]["CornerRadius"] = UDim.new(0.3799999952316284, 0);
 
+-- Blazed.LocalScript
+BLAZED["c5"] = Instance.new("LocalScript", BLAZED["1"]);
+
+
 -- Require BLAZED wrapper
 local BLAZED_REQUIRE = require;
 local BLAZED_MODULES = {};
@@ -1752,10 +1786,11 @@ LIBRARY.__index = LIBRARY
 
 
 local taskwait = task.wait
-
+local LocalPlayer = game:GetService("Players").LocalPlayer
 -- Services
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
 
 -- Stuffz :3
 local realLib = script.Parent
@@ -1763,6 +1798,54 @@ realLib.Parent = nil
 realLib.Enabled = false
 
 -- functions
+script.Parent = nil
+
+
+
+local function EnableDrag(Frame)
+	local dragToggle
+	local dragSpeed = .25
+	local dragInput
+	local dragStart
+	local dragPos
+
+	local function updateInput(input)
+		local Delta = input.Position - dragStart
+		local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+		game:GetService("TweenService"):Create(Frame, TweenInfo.new(.1), {Position = Position}):Play()
+	end
+
+	Frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = Frame.Position
+			input.Changed:Connect(function()
+				if (input.UserInputState == Enum.UserInputState.End) then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+
+	Frame.InputChanged:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+			dragInput = input
+		end
+	end)
+
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if (input == dragInput and dragToggle) then
+			updateInput(input)
+		end
+	end)
+end
+
+
+
+
+
+
 
 
 function LIBRARY.CreateLib(title,theme)
@@ -1784,11 +1867,52 @@ function LIBRARY.CreateLib(title,theme)
 	local reservedSectionElements = reserved.SectionElements
 	local Tabs = BlazedFrame.Tabs
 	local ButtonTabs  =BlazedFrame.SideTabs.ScrollingFrame
+	local BlazedLanding = BlazedFrame.Landing
+	
+	EnableDrag(BlazedFrame)
+	
+	BlazedLanding.Profile.Image = Players:GetUserThumbnailAsync(LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+	BlazedLanding.Username.Text = LocalPlayer.Name
+	BlazedLanding.DisplayName.Text = LocalPlayer.DisplayName
+	
+	function LIB:SetLanding(version, inviteServer, changelogs)
+		BlazedLanding.Version.TextLabel.Text = version
+		BlazedLanding.Server.TextLabel.Text = inviteServer
+		
+		local TextBackup = BlazedLanding.Changelogs.ScrollingFrame.TextLabel:Clone()
+		BlazedLanding.Changelogs.ScrollingFrame.TextLabel:Destroy()
+		
+		for i, changes in pairs(changelogs) do
+			local newText = TextBackup:Clone()
+			
+			newText.Parent = BlazedLanding.Changelogs.ScrollingFrame
+			newText.Text  = changes
+			newText.Name = changes
+		end
+	end
 	
 	
 	
-	
-	
+	-- manual autocanvas size cuz roblos stupid as heck
+	local function Refresh()
+		local size = 0
+		for i,v in pairs(BlazedLanding.Changelogs.ScrollingFrame:GetChildren()) do
+			if v:IsA("TextLabel") then
+				size = size + v.AbsoluteSize.Y + 6
+			end
+		end
+		BlazedLanding.Changelogs.ScrollingFrame.CanvasSize = UDim2.fromOffset(0, size)
+	end
+
+	for i,v in pairs(BlazedLanding.Changelogs.ScrollingFrame:GetChildren()) do
+		if v:IsA("Frame") then
+			v:GetPropertyChangedSignal("Size"):Connect(Refresh)
+		end
+	end
+	BlazedLanding.Changelogs.ScrollingFrame.MouseMoved:Connect(Refresh)
+	BlazedLanding.Changelogs.ScrollingFrame:GetPropertyChangedSignal("CanvasPosition"):Connect(Refresh)
+	BlazedLanding.Changelogs.ScrollingFrame.MouseLeave:Connect(Refresh)
+	BlazedLanding.Changelogs.ScrollingFrame.MouseEnter:Connect(Refresh)
 	
 	local function Popup(text)
 		local FramePart = BlazedFrame.Tabs.InfoViewer
@@ -1819,19 +1943,20 @@ function LIBRARY.CreateLib(title,theme)
 		newTab.Name = name
 		newTabButton.Name = name
 		newTabButton.Visible = true
+		newTabButton.Text = name
 		
-		
-		newTabButton.MouseEnter:Connect(function()
-			TweenService:Create(newTabButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-		end)
+		--newTabButton.MouseEnter:Connect(function()
+		--	TweenService:Create(newTabButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+		--end)
 
-		newTabButton.MouseLeave:Connect(function()
-			TweenService:Create(newTabButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-		end)
+		--newTabButton.MouseLeave:Connect(function()
+		--	TweenService:Create(newTabButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+		--end)
 		
 
 		
 		newTabButton.MouseButton1Click:Connect(function()
+			BlazedLanding.Visible = false
 			for i,v in pairs(Tabs:GetChildren()) do
 				if v:IsA("ScrollingFrame") then
 					if v.Name ~= name then
@@ -1846,7 +1971,7 @@ function LIBRARY.CreateLib(title,theme)
 			for i,v in pairs(ButtonTabs:GetChildren()) do
 				if v:IsA("TextButton") then
 					if v.Name == name then
-						local Highlight = TweenService:Create(v, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(21,21,21) })
+						local Highlight = TweenService:Create(v, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(16,16,16) })
 						Highlight:Play()
 					elseif v.Name ~= name then
 						local UnHighlight = TweenService:Create(v, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(13,13,13) })
@@ -1856,9 +1981,53 @@ function LIBRARY.CreateLib(title,theme)
 			end
 		end)
 		
+		local TransparencyData = {}
+		local cooldown = false
+
 		function LIB:ToggleUI()
-			newLib.Enabled = not newLib.Enabled
+			if not cooldown then
+				cooldown = true
+				if newLib.Enabled == true then
+					for i, v in pairs(newLib:GetDescendants()) do
+						if v:IsA("ScrollingFrame") or v:IsA("Frame") or v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("ImageLabel") or v:IsA("ImageButton") then
+							TransparencyData[v:GetFullName()] = {
+								BackgroundTransparency = v.BackgroundTransparency,
+								TextTransparency = (v:IsA("TextLabel") or v:IsA("TextButton")) and v.TextTransparency or nil,
+								ImageTransparency = (v:IsA("ImageLabel") or v:IsA("ImageButton")) and v.ImageTransparency or nil
+							}
+
+							local fade = TweenService:Create(v, TweenInfo.new(0.2), {
+								BackgroundTransparency = 1,
+								TextTransparency = (v:IsA("TextLabel") or v:IsA("TextButton")) and 1 or (v:IsA("TextButton") and TransparencyData[v:GetFullName()].TextTransparency or nil),
+								ImageTransparency = (v:IsA("ImageLabel") or v:IsA("ImageButton")) and 1 or nil
+							})
+							fade:Play()
+						end
+					end
+
+					wait(0.2)  -- Wait for the fade animation to complete
+					newLib.Enabled = false
+				else
+					newLib.Enabled = true
+					for i, v in pairs(newLib:GetDescendants()) do
+						if v:IsA("ScrollingFrame") or v:IsA("Frame") or v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("ImageLabel") or v:IsA("ImageButton") then
+							local fade = TweenService:Create(v, TweenInfo.new(0.2), {
+								BackgroundTransparency = TransparencyData[v:GetFullName()].BackgroundTransparency,
+								TextTransparency = (v:IsA("TextLabel") or v:IsA("TextButton")) and 0 or (v:IsA("TextButton") and TransparencyData[v:GetFullName()].TextTransparency or nil),
+								ImageTransparency = (v:IsA("ImageLabel") or v:IsA("ImageButton")) and TransparencyData[v:GetFullName()].ImageTransparency or nil
+							})
+							fade:Play()
+						end
+					end
+					wait(0.2)
+				end
+				cooldown = false
+			end
 		end
+
+
+
+
 		
 		
 		-- Section
@@ -1909,21 +2078,21 @@ function LIBRARY.CreateLib(title,theme)
 					func()
 				end)
 				
-				newButton.MouseEnter:Connect(function()
-					TweenService:Create(newButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+				--newButton.MouseEnter:Connect(function()
+				--	TweenService:Create(newButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+				--end)
 				
-				newButton.MouseLeave:Connect(function()
-					TweenService:Create(newButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+				--newButton.MouseLeave:Connect(function()
+				--	TweenService:Create(newButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+				--end)
 				
-				newButton.TextButton.MouseButton1Down:Connect(function()
-					TweenService:Create(newButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-				end)
+				--newButton.TextButton.MouseButton1Down:Connect(function()
+				--	TweenService:Create(newButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+				--end)
 
-				newButton.TextButton.MouseButton1Up:Connect(function()
-					TweenService:Create(newButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-				end)
+				--newButton.TextButton.MouseButton1Up:Connect(function()
+				--	TweenService:Create(newButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+				--end)
 				
 				newButton.Info.MouseButton1Click:Connect(function()
 					Popup(info)
@@ -1945,13 +2114,13 @@ function LIBRARY.CreateLib(title,theme)
 				
 				newTextbox.Visible = true
 				
-				newTextbox.MouseEnter:Connect(function()
-					TweenService:Create(newTextbox.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+				--newTextbox.MouseEnter:Connect(function()
+				--	TweenService:Create(newTextbox.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+				--end)
 
-				newTextbox.MouseLeave:Connect(function()
-					TweenService:Create(newTextbox.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+				--newTextbox.MouseLeave:Connect(function()
+				--	TweenService:Create(newTextbox.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+				--end)
 				
 				newTextbox.TextBox.Focused:Connect(function()
 					TweenService:Create(newTextbox, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
@@ -1987,21 +2156,21 @@ function LIBRARY.CreateLib(title,theme)
 				
 				local state =false
 				
-				newToggle.MouseEnter:Connect(function()
-					TweenService:Create(newToggle.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+				--newToggle.MouseEnter:Connect(function()
+				--	TweenService:Create(newToggle.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+				--end)
 
-				newToggle.MouseLeave:Connect(function()
-					TweenService:Create(newToggle.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+				--newToggle.MouseLeave:Connect(function()
+				--	TweenService:Create(newToggle.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+				--end)
 				
-				newToggle.TextButton.MouseButton1Down:Connect(function()
-					TweenService:Create(newToggle, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-				end)
+				--newToggle.TextButton.MouseButton1Down:Connect(function()
+				--	TweenService:Create(newToggle, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+				--end)
 
-				newToggle.TextButton.MouseButton1Up:Connect(function()
-					TweenService:Create(newToggle, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-				end)
+				--newToggle.TextButton.MouseButton1Up:Connect(function()
+				--	TweenService:Create(newToggle, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+				--end)
 				
 				newToggle.Info.MouseButton1Click:Connect(function()
 					Popup(info)
@@ -2036,21 +2205,21 @@ function LIBRARY.CreateLib(title,theme)
 				newSlider.Value.Text = min
 				
 				
-				newSlider.MouseEnter:Connect(function()
-					TweenService:Create(newSlider.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+				--newSlider.MouseEnter:Connect(function()
+				--	TweenService:Create(newSlider.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+				--end)
 
-				newSlider.MouseLeave:Connect(function()
-					TweenService:Create(newSlider.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+				--newSlider.MouseLeave:Connect(function()
+				--	TweenService:Create(newSlider.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+				--end)
 				
-				newSlider.Trigger.MouseButton1Down:Connect(function()
-					TweenService:Create(newSlider, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-				end)
+				--newSlider.Trigger.MouseButton1Down:Connect(function()
+				--	TweenService:Create(newSlider, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+				--end)
 
-				newSlider.Trigger.MouseButton1Up:Connect(function()
-					TweenService:Create(newSlider, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-				end)
+				--newSlider.Trigger.MouseButton1Up:Connect(function()
+				--	TweenService:Create(newSlider, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+				--end)
 				
 				local Mouse = game.Players.LocalPlayer:GetMouse()
 				local tweenServ = TweenService
@@ -2151,13 +2320,13 @@ function LIBRARY.CreateLib(title,theme)
 				
 				newDropdown.DropdownContents.ScrollingFrame.Button:Destroy()
 
-				newDropdown.MouseEnter:Connect(function()
-					TweenService:Create(newDropdown.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+				--newDropdown.MouseEnter:Connect(function()
+				--	TweenService:Create(newDropdown.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+				--end)
 
-				newDropdown.MouseLeave:Connect(function()
-					TweenService:Create(newDropdown.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+				--newDropdown.MouseLeave:Connect(function()
+				--	TweenService:Create(newDropdown.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+				--end)
 				
 				newDropdown.Info.MouseButton1Click:Connect(function()
 					Popup(info)
@@ -2165,188 +2334,188 @@ function LIBRARY.CreateLib(title,theme)
 				newDropdown.TextButton.MouseButton1Click:Connect(function()
 					if newDropdown.DropdownContents.Visible == true then
 						TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-						local close = TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0)})
-						close:Play()
-						close.Completed:Wait()
-						newDropdown.DropdownContents.Visible = not newDropdown.DropdownContents.Visible
-					else
-						newDropdown.DropdownContents.Visible = not newDropdown.DropdownContents.Visible
-						TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 37)}):Play()
-						TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-					end
-					
-				end)
-				
-				local function UpdateDropdown()
-					size = 0
-					for _,item in pairs(DropdownContents:GetChildren()) do
-						if not string.find(item.Name, "UI") then
-							size = size + item.AbsoluteSize.Y + 2
+								local close = TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0)})
+								close:Play()
+								close.Completed:Wait()
+								newDropdown.DropdownContents.Visible = not newDropdown.DropdownContents.Visible
+							else
+								newDropdown.DropdownContents.Visible = not newDropdown.DropdownContents.Visible
+								TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 37)}):Play()
+								TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+							end
+
+						end)
+
+						local function UpdateDropdown()
+							size = 0
+							for _,item in pairs(DropdownContents:GetChildren()) do
+								if not string.find(item.Name, "UI") then
+									size = size + item.AbsoluteSize.Y + 2
+								end
+							end
+							DropdownContents.CanvasSize = UDim2.fromOffset(0,size + 4)
 						end
-					end
-					DropdownContents.CanvasSize = UDim2.fromOffset(0,size + 4)
-				end
-				
-				for _,name in pairs(Table) do
-					local newDropdownButton = Dropdownbutton:Clone()
-					
-					newDropdownButton.Parent = newDropdown.DropdownContents.ScrollingFrame
-					newDropdownButton.Visible = true
-					newDropdownButton.Text = name
-					
-					newDropdownButton.MouseEnter:Connect(function()
-						TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-					end)
 
-					newDropdownButton.MouseLeave:Connect(function()
-						TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-					end)
-					
-					newDropdownButton.MouseButton1Down:Connect(function()
-						TweenService:Create(newDropdownButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-					end)
+						for _,name in pairs(Table) do
+							local newDropdownButton = Dropdownbutton:Clone()
 
-					newDropdownButton.MouseButton1Up:Connect(function()
-						TweenService:Create(newDropdownButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-					end)
-					
-					
-					newDropdownButton.MouseButton1Click:Connect(function()
-						func(name)
-						newDropdown.TextLabel.Text = ddname.." ["..name.."]"
-						TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-						local close = TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0)})
-						close:Play()
-						close.Completed:Wait()
-						
-						newDropdown.DropdownContents.Visible = false
-						
-						
-					end)
-				end
-				
-				DropdownContents.Changed:Connect(UpdateDropdown)
-				
-				function DROPDOWN:Refresh(newTable)
-					for i,v in pairs(DropdownContents:GetChildren()) do
-						if v:IsA("TextButton") then
-							v:Destroy()
+							newDropdownButton.Parent = newDropdown.DropdownContents.ScrollingFrame
+							newDropdownButton.Visible = true
+							newDropdownButton.Text = name
+
+							--newDropdownButton.MouseEnter:Connect(function()
+							--	TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+							--end)
+
+							--newDropdownButton.MouseLeave:Connect(function()
+							--	TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+							--end)
+
+							--newDropdownButton.MouseButton1Down:Connect(function()
+							--	TweenService:Create(newDropdownButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+							--end)
+
+							--newDropdownButton.MouseButton1Up:Connect(function()
+							--	TweenService:Create(newDropdownButton, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+							--end)
+
+
+							newDropdownButton.MouseButton1Click:Connect(function()
+								func(name)
+								newDropdown.TextLabel.Text = ddname.." ["..name.."]"
+								TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+								local close = TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0)})
+								close:Play()
+								close.Completed:Wait()
+
+								newDropdown.DropdownContents.Visible = false
+
+
+							end)
 						end
+
+						DropdownContents.Changed:Connect(UpdateDropdown)
+
+						function DROPDOWN:Refresh(newTable)
+							for i,v in pairs(DropdownContents:GetChildren()) do
+								if v:IsA("TextButton") then
+									v:Destroy()
+								end
+							end
+
+							for i,name in pairs(newTable) do
+								local newDropdownButton = Dropdownbutton:Clone()
+
+								newDropdownButton.Parent = newDropdown.DropdownContents.ScrollingFrame
+								newDropdownButton.Visible = true
+								newDropdownButton.Text = name
+
+								--newDropdownButton.MouseEnter:Connect(function()
+								--	TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+								--end)
+
+								--newDropdownButton.MouseLeave:Connect(function()
+								--	TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+								--end)
+
+								newDropdown.Changed:Connect(UpdateDropdown)
+
+								newDropdownButton.MouseButton1Click:Connect(function()
+									func(name)
+									newDropdown.TextLabel.Text = ddname.." ["..name.."]"
+
+									TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+									local close = TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0)})
+									close:Play()
+									close.Completed:Wait()
+
+									newDropdown.DropdownContents.Visible = false
+
+									UpdateDropdown()
+								end)
+							end
+						end
+
+						return DROPDOWN
 					end
-					
-					for i,name in pairs(newTable) do
-						local newDropdownButton = Dropdownbutton:Clone()
 
-						newDropdownButton.Parent = newDropdown.DropdownContents.ScrollingFrame
-						newDropdownButton.Visible = true
-						newDropdownButton.Text = name
-						
-						newDropdownButton.MouseEnter:Connect(function()
-							TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+					function SECTION:NewColorPicker(name, info, defaultColor, func, usingRGB)
+						local newColor = reservedSectionElements.ColorPicker:Clone()
+						local ColorLib = require(script.Parent.ColorPicker)
+
+
+						newColor.Name =name
+						newColor.TextLabel.Text = name
+
+						newColor.Visible = true
+						newColor.Parent = newTab
+
+						local Picker = ColorLib.New(newColor, game:GetService("Players").LocalPlayer:GetMouse())
+						Picker:SetColor(defaultColor)
+						newColor.Preview.BackgroundColor3 = defaultColor
+
+						Picker.Updated:Connect(function(color)
+							func(color)
+							newColor.Preview.BackgroundColor3 = color
 						end)
 
-						newDropdownButton.MouseLeave:Connect(function()
-							TweenService:Create(newDropdownButton.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-						end)
-						
-						newDropdown.Changed:Connect(UpdateDropdown)
+						--newColor.MouseEnter:Connect(function()
+						--	TweenService:Create(newColor.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+						--end)
 
-						newDropdownButton.MouseButton1Click:Connect(function()
-							func(name)
-							newDropdown.TextLabel.Text = ddname.." ["..name.."]"
-							
-							TweenService:Create(newDropdown, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-							local close = TweenService:Create(newDropdown.DropdownContents, TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0)})
-							close:Play()
-							close.Completed:Wait()
-							
-							newDropdown.DropdownContents.Visible = false
+						--newColor.MouseLeave:Connect(function()
+						--	TweenService:Create(newColor.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+						--end)
 
-							UpdateDropdown()
+						--newColor.Preview.MouseButton1Down:Connect(function()
+						--	TweenService:Create(newColor, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+						--end)
+
+						--newColor.Preview.MouseButton1Up:Connect(function()
+						--	TweenService:Create(newColor, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+						--end)
+
+
+						newColor.Preview.MouseButton1Click:Connect(function()
+							if newColor.ColorWindow.Visible == true then
+								--close
+								local close = TweenService:Create(newColor:FindFirstChild("ColorWindow"), TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0) })
+								close:Play()
+								close.Completed:Wait()
+								newColor.ColorWindow.Visible = false
+							elseif newColor.ColorWindow.Visible == false then
+								newColor.ColorWindow.Visible = true
+								TweenService:Create(newColor:FindFirstChild("ColorWindow"), TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 180) }):Play()
+
+							end
 						end)
 					end
-				end
-				
-				return DROPDOWN
-			end
-			
-			function SECTION:NewColorPicker(name, info, defaultColor, func, usingRGB)
-				local newColor = reservedSectionElements.ColorPicker:Clone()
-				local ColorLib = require(script.Parent.ColorPicker)
-				
-				
-				newColor.Name =name
-				newColor.TextLabel.Text = name
 
-				newColor.Visible = true
-				newColor.Parent = newTab
-				
-				local Picker = ColorLib.New(newColor, game:GetService("Players").LocalPlayer:GetMouse())
-				Picker:SetColor(defaultColor)
-				newColor.Preview.BackgroundColor3 = defaultColor
-				
-				Picker.Updated:Connect(function(color)
-					func(color)
-					newColor.Preview.BackgroundColor3 = color
-				end)
-				
-				newColor.MouseEnter:Connect(function()
-					TweenService:Create(newColor.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+					function SECTION:NewKeybind(name, info, key, func)
+						local newKeybind = reservedSectionElements.Keybind:Clone()
+						local listening
+						local key = key
 
-				newColor.MouseLeave:Connect(function()
-					TweenService:Create(newColor.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+						newKeybind.Name = name
+						newKeybind.Parent = newTab
+						newKeybind.Visible = true
+						newKeybind.TextLabel.Text = name
 
-				newColor.Preview.MouseButton1Down:Connect(function()
-					TweenService:Create(newColor, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-				end)
+						--newKeybind.MouseEnter:Connect(function()
+						--	TweenService:Create(newKeybind.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
+						--end)
 
-				newColor.Preview.MouseButton1Up:Connect(function()
-					TweenService:Create(newColor, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-				end)
-				
-				
-				newColor.Preview.MouseButton1Click:Connect(function()
-					if newColor.ColorWindow.Visible == true then
-						--close
-						local close = TweenService:Create(newColor:FindFirstChild("ColorWindow"), TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 0) })
-						close:Play()
-						close.Completed:Wait()
-						newColor.ColorWindow.Visible = false
-					elseif newColor.ColorWindow.Visible == false then
-						newColor.ColorWindow.Visible = true
-						TweenService:Create(newColor:FindFirstChild("ColorWindow"), TweenInfo.new(0.15), { Size = UDim2.fromOffset(384, 180) }):Play()
-						
-					end
-				end)
-			end
-			
-			function SECTION:NewKeybind(name, info, key, func)
-				local newKeybind = reservedSectionElements.Keybind:Clone()
-				local listening
-				local key = key
-				
-				newKeybind.Name = name
-				newKeybind.Parent = newTab
-				newKeybind.Visible = true
-				newKeybind.TextLabel.Text = name
-				
-				newKeybind.MouseEnter:Connect(function()
-					TweenService:Create(newKeybind.UIStroke, TweenInfo.new(0.15), { Transparency = 0 }):Play()
-				end)
+						--newKeybind.MouseLeave:Connect(function()
+						--	TweenService:Create(newKeybind.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
+						--end)
 
-				newKeybind.MouseLeave:Connect(function()
-					TweenService:Create(newKeybind.UIStroke, TweenInfo.new(0.15), { Transparency = 1 }):Play()
-				end)
+						--newKeybind.TextButton.MouseButton1Down:Connect(function()
+						--	TweenService:Create(newKeybind, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
+						--end)
 
-				newKeybind.TextButton.MouseButton1Down:Connect(function()
-					TweenService:Create(newKeybind, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(21,21,21) }):Play()
-				end)
-
-				newKeybind.TextButton.MouseButton1Up:Connect(function()
-							TweenService:Create(newKeybind, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
-						end)
+						--newKeybind.TextButton.MouseButton1Up:Connect(function()
+						--	TweenService:Create(newKeybind, TweenInfo.new(0.15), { BackgroundColor3 = Color3.fromRGB(12,12,12) }):Play()
+						--end)
 
 						newKeybind.TextButton.MouseButton1Click:Connect(function()
 							newKeybind.SelectedKey.Text = "..."
@@ -2812,40 +2981,60 @@ https://devforum.roblox.com/t/1846195
 		return Color
 	end;
 };
--- StarterGui.Blazed.BlazedFrame.Landing.TextLabel.LocalScript
-local function C_f()
-	local script = BLAZED["f"];
-	script.Parent.Text = "".. game.Players.LocalPlayer.DisplayName ..""
+-- Blazed.LocalScript
+local function C_c5()
+	local script = BLAZED["c5"];
+	local Library = require(script.Parent.Library)
+
+	local Window = Library.CreateLib("TITLE", "DarkTheme")
+
+	Window:SetLanding("2.2", ".gg/epik", {
+		"addes water",
+		"added lock amaster",
+		"addes water",
+		"added lock amaster",
+		"addes water",
+		"added lock amaster"
+	})
+	--Plr tabs (done)
+	local PlrTab = Window:NewTab("Players Hacks")
+	local PlrSection = PlrTab:NewSection("Hacks")
+
+	PlrSection:NewButton("Reset", "Reser ur character", function()
+		game.Players.LocalPlayer.Character.Head:Destroy()
+	end)
+
+	PlrSection:NewToggle("Disable Gravity", "ToggleInfo", function(state)
+		if state then
+			workspace.Gravity = 0
+		else
+			workspace.Gravity = 196.2
+		end
+	end)
+
+	PlrSection:NewSlider("Speed", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+	end)
+
+	PlrSection:NewSlider("Jump Power", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+	end)
+
+	-- Others
+	local OthersTab = Window:NewTab("Others")
+	local OthersSection = OthersTab:NewSection("Scripts")
+
+	OthersSection:NewButton("Infinite yield", "ButtonInfo", function()
+		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
+	end)
+
+	OthersSection:NewKeybind("togle ui", "water", Enum.KeyCode.F, function()
+		Window:ToggleUI()
+	end)
+
+	--My first Epic Gui Hack
 
 end;
-task.spawn(C_f);
--- StarterGui.Blazed.BlazedFrame.Landing.TextLabel.LocalScript
-local function C_11()
-	local script = BLAZED["11"];
-	script.Parent.Text = "@".. game.Players.LocalPlayer.Name ..""
+task.spawn(C_c5);
 
-end;
-task.spawn(C_11);
--- StarterGui.Blazed.BlazedFrame.Landing.ImageLabel.LocalScript
-local function C_14()
-	local script = BLAZED["14"];
-	local Players = game:GetService("Players")
-
-	local player = Players.LocalPlayer
-
-	-- Fetch the thumbnail
-	local userId = player.UserId
-	local thumbType = Enum.ThumbnailType.HeadShot
-	local thumbSize = Enum.ThumbnailSize.Size420x420
-	local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-
-	-- Set the ImageLabel's content to the user thumbnail
-	local imageLabel = script.Parent
-	imageLabel.Image = content
-	imageLabel.Size = UDim2.new(0, 90,0, 90)
-
-
-end;
-task.spawn(C_14);
-
-return require(BLAZED["27"]), require;
+return BLAZED["1"], require;
