@@ -1872,7 +1872,7 @@ function LIBRARY.CreateLib(title,theme)
 	EnableDrag(BlazedFrame)
 	
 	BlazedLanding.Profile.Image = Players:GetUserThumbnailAsync(LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
-	BlazedLanding.Username.Text = LocalPlayer.Name
+	BlazedLanding.Username.Text = "@"..LocalPlayer.Name
 	BlazedLanding.DisplayName.Text = LocalPlayer.DisplayName
 	
 	function LIB:SetLanding(version, inviteServer, changelogs)
