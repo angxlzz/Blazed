@@ -1,1 +1,1 @@
-print("gg/lockers")
+game.Players.LocalPlayer:Kick("Blazed V1 | Please get the updated version at blazed.lol.")
